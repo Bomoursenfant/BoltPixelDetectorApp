@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="OpenCvSharp4" Version="4.8.0.20230708" />
+      <PackageReference Include="OpenCvSharp4.Windows" Version="4.8.0.20230708" />
+      <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.8.0.20230708" />
+      <PackageReference Include="OpenCvSharp4.Extensions" Version="4.8.0.20230708" />
+      <PackageReference Include="System.Data.SQLite" Version="1.0.118.0" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="BoltPixelDetectorApp25_5\**" />
+    <EmbeddedResource Remove="BoltPixelDetectorApp25_5\**" />
+    <None Remove="BoltPixelDetectorApp25_5\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="YoloSegmentationBridge.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="flask_api_server.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
